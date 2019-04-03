@@ -95,7 +95,7 @@ class PlayState extends FlxState
 		if (!multiplayer)
 			ball.velocity.x = ball.speed;
 
-		goalSFX = FlxG.sound.load(AssetPaths.sfx_wpn_cannon4__wav);
+		goalSFX = FlxG.sound.load(AssetPaths.goal_sfx__wav);
 
 		powerUp = new PowerUp();
 		timer = new FlxTimer();

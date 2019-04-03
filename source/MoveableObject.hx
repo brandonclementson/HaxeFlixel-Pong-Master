@@ -28,7 +28,7 @@ class MoveableObject extends FlxSprite
     {
         super();
 
-        ballPaddleSFX = FlxG.sound.load(AssetPaths.ball_paddle_sfx2__wav);
+        ballPaddleSFX = FlxG.sound.load(AssetPaths.ball_paddle_sfx__wav);
         ballWallSFX = FlxG.sound.load(AssetPaths.ball_wall_sfx__wav);
     }
 
