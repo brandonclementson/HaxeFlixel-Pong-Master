@@ -13,10 +13,9 @@ class Main extends Sprite
 		super();
 		addChild(new FlxGame(1280, 720, MenuState));
 		
+		#if android
 		// Force fullscreen on Android devices.
 		FlxG.scaleMode = new FillScaleMode();
-
-		// Set background color for all states.
-		FlxG.cameras.bgColor = 0xFF1F2326;
+		#end
 	}
 }

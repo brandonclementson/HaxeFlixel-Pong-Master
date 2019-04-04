@@ -23,6 +23,8 @@ class MenuState extends FlxState
     {
         super.create();
 
+        FlxG.cameras.bgColor = 0xFF1F2326;
+
         FlxG.sound.playMusic(AssetPaths.battle_theme__ogg, 0.7, true);
         #if (web || desktop)
         FlxG.mouse.useSystemCursor = true;

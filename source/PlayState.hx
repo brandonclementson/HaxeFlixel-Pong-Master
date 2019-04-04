@@ -54,6 +54,7 @@ class PlayState extends FlxState
 		FlxG.mouse.visible = false;
 		#end
 		
+		FlxG.cameras.bgColor = 0xFF1F2326;
 		CommonMethods.buildStage(10, this);
 		
 		// Check game type and load in appropiate assets.
