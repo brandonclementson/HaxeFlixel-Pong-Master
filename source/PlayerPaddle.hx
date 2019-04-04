@@ -38,14 +38,23 @@ class PlayerPaddle extends Paddle
         #end
     }
 
-    public function rightPaddleControls(paddle:Paddle)
-    {
-        if (FlxG.keys.pressed.UP)
-            velocity.y = -paddleSpeed;
-
-        if (FlxG.keys.pressed.DOWN)
-            velocity.y = paddleSpeed;
-
+    public function rightPaddleControls(paddle:Paddle, state:PlayState)
+    {   
+        // Check play mode and add multiple control options if in single player mode.
+        if (state.multiplayer)
+        {
+            if (FlxG.keys.pressed.UP)
+                velocity.y = -paddleSpeed;
+            if (FlxG.keys.pressed.DOWN)
+                velocity.y = paddleSpeed;
+        }
+        else 
+        {
+            if (FlxG.keys.pressed.UP || FlxG.keys.pressed.W)
+                velocity.y = -paddleSpeed;
+            if (FlxG.keys.pressed.DOWN || FlxG.keys.pressed.S)
+                velocity.y = paddleSpeed;
+        }
 
         #if (mobile || web)
         for (touch in FlxG.touches.list)

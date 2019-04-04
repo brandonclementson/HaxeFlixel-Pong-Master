@@ -14,7 +14,7 @@ import flixel.system.FlxSound;
 
 class PlayState extends FlxState
 {
-	var multiplayer:Bool;
+	public var multiplayer:Bool;
 	
 	var paddles = new FlxGroup();
 	var leftPaddle:PlayerPaddle;
@@ -54,8 +54,6 @@ class PlayState extends FlxState
 		FlxG.mouse.visible = false;
 		#end
 		
-		//FlxG.sound.playMusic(AssetPaths.battle_theme__ogg, 0.3, true);
-
 		CommonMethods.buildStage(10, this);
 		
 		// Check game type and load in appropiate assets.
@@ -117,7 +115,7 @@ class PlayState extends FlxState
 		super.update(elapsed);
 
 		menuControls();
-		rightPaddle.rightPaddleControls(rightPaddle);
+		rightPaddle.rightPaddleControls(rightPaddle, this);
 
 		if (multiplayer)
 			leftPaddle.leftPaddleControls(leftPaddle);
