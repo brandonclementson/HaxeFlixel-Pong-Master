@@ -52,7 +52,9 @@ class MoveableObject extends FlxSprite
 
     public function collidePaddles(object:MoveableObject, paddle:Paddle)
     {
-        ballPaddleSFX.play();
+        if (ballPaddleSFX.playing == false)
+            ballPaddleSFX.play();
+
         FlxObject.separate(object, paddle);
 
         speed = speed + 25;
